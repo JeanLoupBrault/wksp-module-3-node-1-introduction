@@ -7,7 +7,7 @@ const morgan = require('morgan');
 // We need to "require" the files whose content we reference in this file.
 const exercisesP1 = require('./__workshop/exercisesP1');
 
-const PORT = 8000;
+const PORT = 4000;
 
 const q6 = (req, res) => res.render('pages/question6');
 const q7 = (req, res) => res.render('pages/question7');
@@ -37,14 +37,21 @@ express()
     
     // this serves up the homepage
     .get('/', (req, res) => {
-        res.send('This is the homepage... it\'s empty :(');
+        res.render('../views/pages/homepage');
+    })
+
+    // this serves up the question 2 page
+    .get('/question2', (req, res) => {
+        res.render('../views/pages/question 2', {
+            sentence: 'Go to page 1'
+        });
     })
 
     // this is our catch all endpoint. If a user navigates to any endpoint that is not
     // defined above, they get to see our 404 page.
     .get('*', (req, res) => {
         res.status(404);
-        res.send('404... This is not the page you are looking for.');
+        res.render('../views/pages/fourOhFour');
     })
 
     // Node spins up our server and sets it to listen on the PORT we defined above.

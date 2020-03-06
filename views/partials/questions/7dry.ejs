@@ -2,14 +2,15 @@
     <h3>Question 7</h3>
     <p>Repeat what you did in Question 6 for this snippet as well.</p>
     <codeblock class='sample'>
-        &lt;header>
+        &lt;%- include('&lt;../partials/questions/7dry', {}) %> header>
         <br />
-        &nbsp;&nbsp;&lt;h1>Node: Workshop 1</h1>
+        &nbsp;&nbsp;&lt;%- include('&lt;../partials/questions/7dry', {}) %> h1>Node: Workshop 1</h1>
         <br />
-        &lt;/header>
+        &lt;%- include('&lt;../partials/questions/7dry', {}) %> /header>
         <br />
     </codeblock>
     <p>✔️ This is what a typical include looks like.</p>
+    
     &lt;%- include('&lt;../partials/questions/7dry', {}) %>
-    <%- include('../partials/questions/7dry') %>
+    &lt;%- include('&lt;RELATIVE_PATH_TO_PARTIAL>', {}) %>
 </div>

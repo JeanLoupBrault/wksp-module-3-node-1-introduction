@@ -34,7 +34,8 @@ const q3 = (req, res) => {
         favoriteBeverage: 'Duff Beer'
     };
 
-    res.render('pages/question3');
+
+    res.render('pages/question3', {homer: homer });
 }
 // -----------------------------------------------
 
@@ -43,8 +44,12 @@ const q3 = (req, res) => {
 // -----------------------------------------------
 const q4 = (req, res) => {
     const popularGirlNames = ['Olivia', 'Ruby', 'Emily', 'Grace', 'Jessica'];
-
-    res.render('pages/question4');
+    const threeMostPop = [];
+    for (let i=0; i < 3; i++) {
+        threeMostPop.push (popularGirlNames[i]);
+    }
+    console.log(threeMostPop);
+    res.render('pages/question4', {popularGirlNames: threeMostPop });
 }
 // -----------------------------------------------
 
@@ -53,8 +58,12 @@ const q4 = (req, res) => {
 // -----------------------------------------------
 const q5 = (req, res) => {
     const popularGirlNames = ['Olivia', 'Ruby', 'Emily', 'Grace', 'Jessica'];
+    const popOrdered = [];
+    popularGirlNames.forEach(name => {
+        popOrdered.push(popularGirlNames);
+    });
 
-    res.render('pages/question5');
+    res.render('pages/question5', {popularGirlNames: popOrdered });
 }
 // -----------------------------------------------
 
